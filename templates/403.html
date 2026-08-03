@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>403 - Acceso denegado</title>
+    <link rel="stylesheet" href="{% static 'css/tailwind.output.css' %}" />
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex items-center justify-center min-h-screen p-6">
+        <div class="w-full max-w-xl text-center">
+            <h1 class="text-6xl font-bold text-gray-700">403</h1>
+            <h2 class="mt-4 text-2xl font-semibold text-gray-600">Acceso denegado</h2>
+            <p class="mt-4 text-gray-600">
+                No cuentas con los permisos necesarios para acceder a esta página.
+                Solicita al administrador que te asigne el permiso correspondiente.
+            </p>
+            <div class="mt-8">
+                <a href="{% url 'logout' %}"
+                   class="px-5 py-3 text-sm font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700">
+                    Cerrar sesión
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

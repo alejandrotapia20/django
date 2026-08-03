@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 import requests
 from django.conf import settings
 
 @login_required
+@permission_required('homepage.index_viewer', raise_exception=True)
 def index(request):
     response = requests.get(settings.API_URL)  # URL de la API
     posts = response.json()  # Convertir la respuesta a JSON
